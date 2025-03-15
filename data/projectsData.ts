@@ -27,6 +27,12 @@ const projectsData: Project[] = [
     imgSrc: '/static/images/2022021811174865.jpg',
     href: 'https://www.vtron.com.cn/product_def_list_775.html',
   },
+  {
+    title: 'LEG处理器',
+    description: `LEG是一种新的图灵完备的计算机架构，你可以利用它来解决一切算法问题。`,
+    imgSrc: '/static/images/blog_03/02.png',
+    href: '/blog/03',
+  },
 ]
 
 export default projectsData
