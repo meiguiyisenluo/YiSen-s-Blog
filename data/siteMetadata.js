@@ -3,7 +3,8 @@ const siteMetadata = {
   title: "YiSen's Blog",
   author: 'YiSen',
   headerTitle: "YiSen's Blog",
-  description: "YiSen's Blog",
+  description:
+    "YiSen's Blog 是一个基于 Next.js 和 Tailwind CSS 构建的个人技术博客网站，旨在分享个人技术实践、开发经验以及行业见解。",
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://luoyisen.com',
