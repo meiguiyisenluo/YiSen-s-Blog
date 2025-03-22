@@ -10,7 +10,7 @@ const siteMetadata = {
   siteUrl: 'https://luoyisen.com',
   siteRepo: 'https://github.com/meiguiyisenluo',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
+  socialBanner: `${process.env.BASE_PATH || ''}/static/images/avatar.png`,
   // mastodon: 'https://mastodon.social/@mastodonuser',
   email: '1402175410@qq.com',
   github: 'https://github.com/meiguiyisenluo/YiSen-s-Blog',

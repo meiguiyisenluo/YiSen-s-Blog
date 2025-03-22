@@ -25,13 +25,14 @@ export const metadata: Metadata = {
     template: `%s | ${siteMetadata.title}`,
   },
   description: siteMetadata.description,
+
   openGraph: {
     title: siteMetadata.title,
     description: siteMetadata.description,
-    url: './',
+    url: siteMetadata.siteUrl,
     siteName: siteMetadata.title,
     images: [siteMetadata.socialBanner],
-    locale: 'en_US',
+    locale: 'zh_CN',
     type: 'website',
   },
   alternates: {
@@ -40,15 +41,27 @@ export const metadata: Metadata = {
       'application/rss+xml': `${siteMetadata.siteUrl}/feed.xml`,
     },
   },
+
   robots: {
     index: true,
     follow: true,
+    noarchive: false,
+    noimageindex: false,
+    nosnippet: false,
+    nocache: false,
+    'max-video-preview': 10,
+    'max-image-preview': 'large',
+    'max-snippet': 150,
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
+      noarchive: false,
+      noimageindex: false,
+      nosnippet: false,
+      nocache: false,
+      'max-video-preview': 10,
       'max-image-preview': 'large',
-      'max-snippet': -1,
+      'max-snippet': 150,
     },
   },
   twitter: {
