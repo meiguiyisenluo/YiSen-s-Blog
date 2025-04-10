@@ -9,7 +9,7 @@ const projectsData: Project[] = [
   {
     title: 'Chiikawa分享站',
     description: `进入 Chiikawa 的治愈宇宙，这里是专注于分享角色介绍和表情包的欢乐站点！了解每个可爱角色的故事，探索他们令人捧腹的互动瞬间，更有丰富的表情包让你在聊天中释放满满萌点。无论你是初次认识 Chiikawa，还是资深粉丝，这里都充满了温暖与乐趣。快来和更多小可爱们一起欢度美好时光吧！`,
-    imgSrc: '/static/images/42b856fa-6d6f-4a33-b612-db1ef12957d2.jpg',
+    imgSrc: '/static/images/42b856fa-6d6f-4a33-b612-db1ef12957d2.png',
     href: 'https://chiikawa.online',
   },
   {
