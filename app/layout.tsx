@@ -2,6 +2,7 @@ import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
 import 'remark-github-blockquote-alert/alert.css'
 
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Space_Grotesk } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${space_grotesk.variable} scroll-smooth`}
       suppressHydrationWarning
     >
+      <GoogleAnalytics gaId="G-YQSK6GJ5NK" />
       <meta name="msvalidate.01" content="9C6FCDEE7B0AD1AF611854E94A82A198" />
       <script
         async

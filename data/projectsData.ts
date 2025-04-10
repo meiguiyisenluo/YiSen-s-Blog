@@ -7,6 +7,12 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    title: 'Chiikawa分享站',
+    description: `进入 Chiikawa 的治愈宇宙，这里是专注于分享角色介绍和表情包的欢乐站点！了解每个可爱角色的故事，探索他们令人捧腹的互动瞬间，更有丰富的表情包让你在聊天中释放满满萌点。无论你是初次认识 Chiikawa，还是资深粉丝，这里都充满了温暖与乐趣。快来和更多小可爱们一起欢度美好时光吧！`,
+    imgSrc: '/static/images/42b856fa-6d6f-4a33-b612-db1ef12957d2.jpg',
+    href: 'https://chiikawa.online',
+  },
+  {
     title: '移动云手机',
     description: `中国移动云手机是云端运行的虚拟手机，可通过实体手机操控，实现一台手机变多台。云手机是实体
 手机的延伸，同样可以聊天、玩游戏、看电影，还具备副号通话、应用多开等特色功能。 `,
