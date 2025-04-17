@@ -45,7 +45,7 @@ const projectsData: Project[] = [
 社交体验。在这里，每一次匹配都可能让你惊呼“OMG！”，从陌生人的日常故事到文化的奇
 妙碰撞，每一次相遇都是独一无二的。为用户提供了一个快速、安全且富有趣味的互动空间。`,
     imgSrc: '/static/images/2025-03-19-163017.png',
-    href: 'https://luoyisen.com/client/#/omgTv',
+    href: 'https://mysiteclient.netlify.app/#/omgTv',
   },
 ]
 
