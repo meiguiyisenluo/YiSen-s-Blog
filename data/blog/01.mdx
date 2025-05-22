@@ -23,7 +23,7 @@ tags: ['Webrtc', 'JavaScript', 'NodeJS', 'Socket.io']
 https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API
 
 整篇文档都是在介绍webrtc相关的技术，而我们主要看指南这几篇文章即可
-![image.png](/static/images/blog_01/0.jpg)
+![image.png](https://r2.luoyisen.com/blog_01/0.jpg)
 
 ### WebRTC 架构概述 与 WebRTC 协议 两篇主要是介绍了WebRTC API底层使用到的网络协议以及链接标准（很概念，读的也是有点一头雾水）
 
@@ -41,18 +41,18 @@ SDP：会话描述协议[Session Description Protocol (SDP)](http://en.wikipedia
 
 这篇文章大概就是一个简单的实现了，里面提供了一个demo以及里面的很多代码片段的解析，通篇很长，有兴趣可以去看看，而我能看到的重点如下：
 
-1.  ![image.png](/static/images/blog_01/1.jpg)
+1.  ![image.png](https://r2.luoyisen.com/blog_01/1.jpg)
 
-2.  ![image.png](/static/images/blog_01/2.jpg)
+2.  ![image.png](https://r2.luoyisen.com/blog_01/2.jpg)
 
     3.文档中原图（信令事务流程）
-    ![image.png](/static/images/blog_01/3.jpg)
+    ![image.png](https://r2.luoyisen.com/blog_01/3.jpg)
 
     4.文档中原图（ICE 候选交换过程）
-    ![image.png](/static/images/blog_01/4.jpg)
+    ![image.png](https://r2.luoyisen.com/blog_01/4.jpg)
 
 以及上面文档链接点进去就能看见的简介第一段文字
-![image.png](/static/images/blog_01/5.jpg)
+![image.png](https://r2.luoyisen.com/blog_01/5.jpg)
 
 #### 综合以上五点我能确定的是：
 
@@ -65,16 +65,16 @@ SDP：会话描述协议[Session Description Protocol (SDP)](http://en.wikipedia
 
 这篇文章中我找到的重要信息就是这么个信令交换过程，如果细心观察你就会发现其实这个不就是上面的 **文档中原图（信令事务流程）** 的文字描述嘛
 
-![image.png](/static/images/blog_01/6.jpg)
+![image.png](https://r2.luoyisen.com/blog_01/6.jpg)
 
 而且看我发现了什么，这不就正好应征了我上面的猜想嘛，信令协商主要交换的就是 会话描述（sdp）交换 以及 ICE候选交换
-![image.png](/static/images/blog_01/7.jpg)
+![image.png](https://r2.luoyisen.com/blog_01/7.jpg)
 
 ### WebRTC 会话的生命周期
 
 这篇文章里我也是找到了这个过程，仔细看第三点： 每个Peer建立一个track事件的响应程序，这个事件会在远程Peer添加一个track到其stream上时被触发。这个响应程序应将tracks和其消受者联系起来，例如video元素。
 这里就已经告诉了我们协商好之后怎么把摄像头捕获到的视频流传输到对等浏览器上了。
-![image.png](/static/images/blog_01/8.jpg)
+![image.png](https://r2.luoyisen.com/blog_01/8.jpg)
 
 ## 二、代码实现
 
@@ -84,52 +84,52 @@ SDP：会话描述协议[Session Description Protocol (SDP)](http://en.wikipedia
 
 ###### socket.io的客户端的两个封装
 
-![code.png](/static/images/blog_01/9.jpg)
+![code.png](https://r2.luoyisen.com/blog_01/9.jpg)
 
 ###### 前端主要代码
 
-![code.png](/static/images/blog_01/10.jpg)
+![code.png](https://r2.luoyisen.com/blog_01/10.jpg)
 结合上面文档阅读，我也完成了如上代码的编写（当然也有参考别人的），其中 会话描述 的交换过程我用到了 WebRTC 链接 一文中的过程做了备注，特点为备注前面带上序号，而 ICE候选 的交换过程其实就是两个事件，如下：
-![image.png](/static/images/blog_01/11.jpg)
+![image.png](https://r2.luoyisen.com/blog_01/11.jpg)
 
 至于代码的执行顺序我就不多解释了，由于两个对等浏览器用到的是同一个文件（startLive），如果你没有理解上面 文档阅读以及信息整理 部分的内容的话，代码读起来可能会有点难以理解。
 
 ##### 信令服务器：nodejs + express + socket.io
 
 这里使用了socket.io的rooms来规定两个人一个房间，并且房间加入满两个人就开始信令协商，而其实关键信令协商的代码只有第60行至62行而已，只是一个简单的信息转发给房间里另一个人的功能（毕竟信令服务器不就是这功能嘛）
-![code.png](/static/images/blog_01/12.jpg)
+![code.png](https://r2.luoyisen.com/blog_01/12.jpg)
 
 ## 三、效果演示
 
 PC
-![IMG_1416.JPG](/static/images/blog_01/13.jpg)
+![IMG_1416.JPG](https://r2.luoyisen.com/blog_01/13.jpg)
 
 移动端
-![IMG_1421.jpg](/static/images/blog_01/14.jpg)
+![IMG_1421.jpg](https://r2.luoyisen.com/blog_01/14.jpg)
 
 ## 四、延时测试
 
 基本在0.1到0.083秒内
 
-![01.jpg](/static/images/blog_01/15.jpg)
+![01.jpg](https://r2.luoyisen.com/blog_01/15.jpg)
 
-![01.jpeg](/static/images/blog_01/16.jpg)
+![01.jpeg](https://r2.luoyisen.com/blog_01/16.jpg)
 
-![02.jpeg](/static/images/blog_01/17.jpg)
+![02.jpeg](https://r2.luoyisen.com/blog_01/17.jpg)
 
-![03.jpeg](/static/images/blog_01/18.jpg)
+![03.jpeg](https://r2.luoyisen.com/blog_01/18.jpg)
 
-![04.jpeg](/static/images/blog_01/19.jpg)
+![04.jpeg](https://r2.luoyisen.com/blog_01/19.jpg)
 
-![05.jpeg](/static/images/blog_01/20.jpg)
+![05.jpeg](https://r2.luoyisen.com/blog_01/20.jpg)
 
-![06.jpeg](/static/images/blog_01/21.jpg)
+![06.jpeg](https://r2.luoyisen.com/blog_01/21.jpg)
 
-![07.jpeg](/static/images/blog_01/22.jpg)
+![07.jpeg](https://r2.luoyisen.com/blog_01/22.jpg)
 
-![08.jpeg](/static/images/blog_01/23.jpg)
+![08.jpeg](https://r2.luoyisen.com/blog_01/23.jpg)
 
-![09.jpeg](/static/images/blog_01/24.jpg)
+![09.jpeg](https://r2.luoyisen.com/blog_01/24.jpg)
 
 ## 五、源码地址
 
@@ -139,6 +139,5 @@ https://gitee.com/luoyisen/webrtc-test
 
 文章里没有过多的解释webrtc以外的东西，比如socket.io和element和nodejs(express)等，项目里用到的大部分除了webrtc以外的技术都是直接文档copy的，没什么难度，大家可以自己去翻阅一下文档。
 感慨一下：在做这个小项目的时候其实我几乎是从零开始的，比如nodejs启动https还要自己用openssl给自己颁个证书，socket.io我只是知道有这么个东西然后做过一个helloworld，几乎是没用过的，以前做helloworld的时候还留下个跨域问题放弃了，这次短短两天之内阅读了socket.io的文档并解决了所有的问题。另外还看完了上述webrtc的几篇文章并实现出来了功能，不得不说这大半年内我的进步真的让我自己很惊讶。
-
 
 好了，就这样，撤退
